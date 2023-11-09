@@ -19,6 +19,14 @@ loginRoute.post("/", async (req, res) => {
   const exists = await User.findOne({ username: case_it(u_name) });
   if (!exists) return res.status(400).send("Invalid Username...");
 
+  if (exists.isAdmin)
+    return res
+      .set({
+        ["access-control-expose-headers"]: "auth-key",
+        ["auth-key"]: exists.getToken(),
+      })
+      .send("Admin welcome...");
+
   const v_password = await bcrypt.compare(password, exists.password);
   if (!v_password) return res.status(400).send("wrong password ...");
 

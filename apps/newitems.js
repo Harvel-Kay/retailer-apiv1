@@ -16,14 +16,16 @@ newItemsApp.get("/:current_p", async (req, res) => {
     .select(["-transactions", "-__v"])
     .skip(startIndex)
     .limit(pageSize);
-  if (!products || !total)
-    return res.status(500).send("oops try again,Appologies..... ");
-
   const response = {
     products,
     next,
     last_page,
   };
+
+  if (products.length === 0) return res.send(response);
+  if (!products || !total)
+    return res.status(500).send("oops try again,Appologies..... ");
+
   res.send(response);
 });
 

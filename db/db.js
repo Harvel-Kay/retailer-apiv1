@@ -6,8 +6,6 @@ const { User } = require("../models/user");
 
 module.exports = async function () {
   try {
-     await User.findOneAndUpdate({ email:"harvelkay1@gmail.com" },{ $set:{ isAdmin:true }},{new:true}) 
-     await User.findOneAndUpdate({ email:"ssekweramathann@gmail.com" },{ $set:{ isAdmin:true }},{new:true}) 
 
     const dbUri = config.get("db_uri");
     mongoose.set("strictQuery", { tlsAllowInvalidCertificates:true });

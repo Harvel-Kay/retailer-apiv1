@@ -15,6 +15,7 @@ const newItemsApp = require("./newitems");
 const filterApp = require("./filter");
 const orderMailApp = require("./orderMail");
 const passResetApp = require("./passReset");
+const adminsApp = require("./admins");
 
 module.exports = function (app) {
   return (
@@ -28,6 +29,7 @@ module.exports = function (app) {
     app.use(express.static("public")),
     app.use(cors()),
     app.use("/retail", homeRouter),
+    app.use("/retail/admins", adminsApp),
     app.use("/retail/users", userRoute),
     app.use("/retail/login", loginRoute),
     app.use("/retail/harvel-user", registerRoute),

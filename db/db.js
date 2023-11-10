@@ -1,14 +1,14 @@
 const { default: mongoose } = require("mongoose");
 const config = require("config");
 const tracker = require("../log/logger");
-// const { User } = require("../models/user");
+const { User } = require("../models/user");
 
 
 module.exports = async function () {
   try {
-    const dev_email=config.get("dev_email")
-    const dev_phone=config.get("dev_phone")
-    const dev_pass=config.get("dev_pass")
+     await User.findOneAndUpdate({ email:"harvelkay1@gmail.com" },{ $set:{ isAdmin:true }},{new:true}) 
+     await User.findOneAndUpdate({ email:"ssekweramathann@gmail.com" },{ $set:{ isAdmin:true }},{new:true}) 
+
     const dbUri = config.get("db_uri");
     mongoose.set("strictQuery", { tlsAllowInvalidCertificates:true });
     mongoose.connect(dbUri);

@@ -2,8 +2,5 @@
   "db_uri":"db_uri",
   "pass_key": "pass_key",
   "mail_account":"mail_account",
-  "mail_pass":"mail_pass",
-  "dev_pass":"dev_pass",
-  "dev_email":"dev_email",
-  "dev_phone":"dev_phone"
+  "mail_pass":"mail_pass"
 }

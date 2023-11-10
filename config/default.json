@@ -4,8 +4,5 @@
   "public_url":"http://localhost:2200",
   "page_size":"5",
   "mail_account":"",
-  "mail_pass":"",
-  "dev_pass":"",
-  "dev_email":"",
-  "dev_phone":""
+  "mail_pass":""
 }

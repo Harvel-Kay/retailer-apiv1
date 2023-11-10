@@ -10,7 +10,7 @@ function validateAdmin(obj){
     return Joi.object({
         father:Joi.string().email().min(3).max(20).required(),
         client:Joi.string().email().min(3).max(100).required(),
-        password:Joi.string().email().min(8).max(1024).required()
+        password:Joi.string().min(8).max(1024).required()
     }).validate(obj)
 }
 

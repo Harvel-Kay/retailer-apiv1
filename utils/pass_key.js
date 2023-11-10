@@ -10,14 +10,7 @@ module.exports = function () {
 
   const notSet = privateKey && mail_account && mail_pass && dev_email && dev_pass && dev_phone
   if (!notSet) {
-    tracker.info(`
-    Dev Email => ${dev_email}
-    Dev Password => ${ dev_pass}
-    Dev Phone => ${dev_phone}
-    Mail Account => ${mail_account}
-    Mail Pass => ${mail_pass}
-    Private Key =>  ${privateKey}
-    `)
+
     tracker.error("Required App config  variables not set ....");
     throw new Error(
       "Pass key, Mail Account, and Mail password are required before starting the app ..."

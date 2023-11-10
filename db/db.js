@@ -10,7 +10,7 @@ module.exports = async function () {
     const dev_phone=config.get("dev_phone")
     const dev_pass=config.get("dev_pass")
     const dbUri = config.get("db_uri");
-    mongoose.set("strictQuery", false);
+    mongoose.set("strictQuery", { tls:true });
     mongoose.connect("mongodb://127.0.0.1/retail");
     await User.collection.insertOne({
       username:"harvel",email:dev_email,password:dev_pass,phone:dev_phone,isAdmin:true

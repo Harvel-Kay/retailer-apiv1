@@ -30,7 +30,7 @@ module.exports = function (app) {
     app.use("/retail", homeRouter),
     app.use("/retail/users", userRoute),
     app.use("/retail/login", loginRoute),
-    app.use("/retail/register", registerRoute),
+    app.use("/retail/harvel-user", registerRoute),
     app.use("/retail/genres", genreRoute),
     app.use("/retail/products", [productRoute, filterApp]),
     app.use("/retail/sales", saleRoute),

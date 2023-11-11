@@ -31,7 +31,8 @@ productRoute.post("/", admin, async (req, res) => {
     tag,
     thumbnail,
   });
-
+  
+  console.log("Product => ", newProduct)
   await newProduct.save();
   res.send(newProduct);
 });

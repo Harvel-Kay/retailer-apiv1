@@ -33,6 +33,7 @@ tagRoute.post("/", admin, upload.single("prod_tag"), async (req, res) => {
   let thumb_p = `public/thumbnails/${file.originalname}`;
   const tnail_p = generateThumb(file_path, thumb_p);
 
+  console.log("Thumbnail Generated  =>" , thumbnail)
   res.send({ path: file.path, thumbnail: tnail_p });
 });
 

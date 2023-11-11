@@ -32,7 +32,6 @@ productRoute.post("/", admin, async (req, res) => {
     thumbnail,
   });
   
-  console.log("Product => ", newProduct)
   await newProduct.save();
   res.send(newProduct);
 });
@@ -75,7 +74,9 @@ productRoute.delete("/:prod_id", admin, async (req, res) => {
 
   if (deleted.tag) {
     const tag_path = deleted.tag.replace(config.get("public_url"), "public/");
+    const t_nail = deleted.thumbnail.replace(config.get("public_url"), "public/");
     fs.unlink(tag_path, (err) => {});
+    fs.unlink(t_nail, (err) => {});
   }
 
   res.send(deleted);
